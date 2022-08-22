@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
 import config from '../config'
-
+import axios from 'axios';
 const SideBar = () => {
   const history = useHistory()
 
@@ -34,10 +34,23 @@ const SideBar = () => {
       microApp.setData(appName, { path: childPath })
     }
   }
-
+  async function getAuthInfo() {
+    try {
+      const res = await axios({
+        method: 'GET',
+        url: '/user/currentUserPicture.do',
+        params: {}
+      });
+      console.log(res);
+    } catch (err) {
+      console.log(err, "错误");
+    }
+  }
+  
   useEffect(() => {
     // 👇 主应用向sidebar子应用下发一个名为pushState的方法
     microApp.setData('appname-sidebar', { pushState })
+    getAuthInfo();
   })
 
   return <micro-app name='appname-sidebar' url={`${config.sidebar}/child/sidebar/`}></micro-app>

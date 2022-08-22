@@ -101,7 +101,254 @@ module.exports = function (proxy, allowedHost) {
     },
     public: allowedHost,
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
-    proxy,
+    // proxy,
+    proxy: {
+     '/user': {
+      target: 'http://11.41.69.185/',
+       changeOrigin: true,
+      },
+      '/source/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/openAuth/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiReflectData/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiContractProductPool/': {
+        // 要代理的地址
+        target: 'http://11.22.126.159/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiContractProductPoolExport/': {
+        // 要代理的地址
+        target: 'http://11.22.126.159/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiMkuPriceApply/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+  
+      '/jdiMkuPriceApprove/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiMkuPriceSet/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiStandardProduct/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiUploadHistory/': {
+        // 要代理的地址
+        // target: 'http://11.22.126.159/',
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiProductToPoolMessage/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiSkuToMku/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiNoStockBook/': {
+        // 要代理的地址
+        target: 'http://11.20.37.124/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiProductCodeConvert/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiContractNoAndManager/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiProductCategoryMapping/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiGdProductCategory/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiRestrictListMan/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/bid/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiSupplyProduct/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiSaleToPoolApprove/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+  
+      '/jdiSaleToPoolApply/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiPriceMonitor/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiProductPoolOperateLog/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiProductCategory/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiPriceSearch/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiLabelProductManagement/': {
+        // 要代理的地址
+        target: 'http://11.22.126.159/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiRoster/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/extendPropertiesApply/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/extendPropertiesApprove/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiCustomerManagement/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiCustomerMonitor/': {
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/jdiUmp/': {
+        // 要代理的地址
+        target: 'http://11.22.126.159/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      },
+      '/userGroupManagement/':{
+        // 要代理的地址
+        target: 'http://11.41.69.185/',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+        changeOrigin: true,
+      }
+    },
     before(app, server) {
       // Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`
       // middlewares before `redirectServedPath` otherwise will not have any effect
@@ -125,6 +372,9 @@ module.exports = function (proxy, allowedHost) {
       // it used the same host and port.
       // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
       app.use(noopServiceWorkerMiddleware(paths.publicUrlOrPath));
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
     },
   };
 };

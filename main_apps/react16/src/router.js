@@ -10,7 +10,7 @@ const React17 = lazy(() => import(/* webpackChunkName: "react17" */ './pages/rea
 const Vite = lazy(() => import(/* webpackChunkName: "vite" */ './pages/vite/vite'))
 const Vue2 = lazy(() => import(/* webpackChunkName: "vue2" */ './pages/vue2/vue2'))
 const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3'))
-
+const GongDing =  lazy(() => import(/* webpackChunkName: "GongDing" */ './pages/test/gongding'))
 function App () {
   return (
     // 设置主应用基础路由为main-react16(用于后续部署)，则子应用基础路由(baseroute)为/main-react16/xxx
@@ -20,6 +20,11 @@ function App () {
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path='/app-gongding'>
+            <Suspense fallback={<div>Loading...</div>}>
+              <GongDing />
+            </Suspense>
           </Route>
           <Route path="/app-angular11">
             <Suspense fallback={<div>Loading...</div>}>

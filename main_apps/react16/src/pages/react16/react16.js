@@ -38,9 +38,11 @@ const React16 = () => {
   return (
     <div>
       <micro-app
-        name='appname-react16'
-        url={`${config.react16}/child/react16/`}
+        name='appname-react16' // 应用名称
+        url={`${config.react16}/child/react16/`} // 应用地址 http://localhost:4004/child/react16/
         baseroute='/main-react16/app-react16'
+        // 基座应用分配给子应用的基础路由 如果不配置，浏览器显示地址为http://localhost.jd.com:3000/child/react16/
+        // 如果配置了，浏览器显示地址为http://localhost.jd.com:3000/main-react16/app-react16
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}
@@ -49,7 +51,7 @@ const React16 = () => {
         onError={handleError}
         onDataChange={handleDataChange}
       ></micro-app>
-    </div>
+    </div> 
   )
 }
 

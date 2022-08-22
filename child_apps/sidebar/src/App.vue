@@ -10,6 +10,17 @@
         <span slot="title">首页</span>
       </el-menu-item>
       <!-- 菜单(el-submenu) index为子应用名称，子菜单(el-menu-item) index为路由地址 -->
+      <el-submenu index="appname-gongding">
+        <template slot="title">
+          <span class='submenu-text'>gongding</span>
+        </template>
+        <el-menu-item index="/app-gongding">
+          <span class='menu-item-text'>home</span>
+        </el-menu-item>
+        <el-menu-item index="/app-gongding/clientApplyToPoolManagement/ApproveManagementList">
+          <span class='menu-item-text'>客户加池审批列表</span>
+        </el-menu-item>
+      </el-submenu>
       <el-submenu index="appname-vue2">
         <template slot="title">
           <span class='submenu-text'>child-vue2</span>
@@ -153,11 +164,13 @@ export default {
       if (this.activeIndex !== '/') {
         this.activeIndex = this.activeIndex.replace(/\/$/, '')
       }
-
+      console.log('activeIndex', this.activeIndex)
       return this.activeIndex
     },
     // 用户点击菜单时控制基座应用跳转
     select (index, indexPath) {
+      console.log('index:',index) // index值：匹配不上就跳子应用默认页 /app-react
+      console.log('indexPath', indexPath) // ['appname-react16', '/app-react']
       if (this.microAppData) {
         // 因为 child-vite 和 child-react17 子应用是hash路由，所以需要传递hash值
         let hash = null
@@ -168,10 +181,9 @@ export default {
         }
 
         // 获取子应用appName
-        const appName = indexPath[0]
-
+        const appName = indexPath[0] // appname-react16
         // 控制基座跳转页面，并渲染子应用
-        this.microAppData.pushState(appName, index, hash)
+        this.microAppData.pushState(appName, index, hash) // hash--null
       }
     },
   }
